@@ -6,7 +6,7 @@ def square(number):
     :param number: int or float
     :return: int or float, the square of the input number
     """
-    pass  # Implement your solution here
+    return number*number
 
 
 def reverse_string(s):
@@ -15,7 +15,13 @@ def reverse_string(s):
     :param s: str
     :return: str, the reversed string
     """
-    pass  # Implement your solution here
+    l = ""
+    leng = len(s) - 1
+    while (leng >=0):
+        l += s[leng]
+        leng = leng - 1
+    return l
+
 
 def find_maximum(lst):
     """
@@ -23,7 +29,11 @@ def find_maximum(lst):
     :param lst: list of int
     :return: int, the maximum number in the list
     """
-    pass  # Implement your solution here 
+    max = lst[0]
+    for num in lst:
+        if num > max:
+            max = num
+    return max
 
 def odd_or_even(n):
     """
@@ -31,7 +41,11 @@ def odd_or_even(n):
     :param n: int
     :return: str, "Odd" or "Even"
     """
-    pass  # Implement your solution here
+    if n % 2 == 0:
+        return "Even"
+    if n % 2 != 0:
+        return "Odd"
+
 
 def is_palindrome(s):
     """
@@ -41,7 +55,13 @@ def is_palindrome(s):
     :param s: str
     :return: bool, `True` if the string is a palindrome, `False` otherwise.
     """
-    pass  # Implement your solution here
+    l = ""
+    leng = len(s) - 1
+    while (leng >=0):
+        l += s[leng]
+        leng = leng - 1
+    return s == l 
+
 
 def calculate_area(shape, *args):
     """
@@ -62,4 +82,12 @@ def calculate_area(shape, *args):
     """
     pass  # Implement your solution here
 
-
+    if shape == "circle":
+        if len(args) == 1:
+            return args[0]*args[0]*math.pi
+    if shape == "rectangle":
+        length, width = args
+        return length * width
+    if shape == "triangle":
+        base, height = args
+        return int((base*height) / 2)
